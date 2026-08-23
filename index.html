@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Northstar Inventory Queue</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">ASSIGNMENT 1 • MESSAGE QUEUE PROTOTYPE</p>
+      <h1>Northstar Inventory</h1>
+      <p class="subtitle">Submit an inventory update and watch it move asynchronously through RabbitMQ.</p>
+      <span id="health" class="badge checking">Checking API…</span>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Send Inventory Update</h2>
+        <form id="inventoryForm">
+          <label>Product ID<input name="productId" required placeholder="P1001"></label>
+          <label>Product Name<input name="productName" required placeholder="Laptop"></label>
+          <label>Quantity<input name="quantity" type="number" min="0" required placeholder="10"></label>
+          <label>Warehouse ID<input name="warehouseId" required placeholder="WH-01"></label>
+          <button type="submit" id="submitBtn">Queue Inventory Update</button>
+        </form>
+        <p class="hint">Use <code>FAIL_ME</code> as Product ID to demonstrate retry/dead-letter handling.</p>
+      </div>
+
+      <div class="card">
+        <h2>Message Lifecycle</h2>
+        <div class="flow">
+          <div class="step" id="step-api"><b>1</b><span>Express API</span><small>Accept update</small></div>
+          <div class="arrow">↓</div>
+          <div class="step" id="step-publish"><b>2</b><span>RabbitMQ</span><small>Publish message</small></div>
+          <div class="arrow">↓</div>
+          <div class="step" id="step-consume"><b>3</b><span>Consumer</span><small>Process message</small></div>
+          <div class="arrow">↓</div>
+          <div class="step" id="step-result"><b>4</b><span>ACK / Retry / DLQ</span><small>Complete processing</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card result" id="result" aria-live="polite">
+      <h2>Prototype Output</h2>
+      <p id="resultText">Submit an inventory update to see the queue response.</p>
+      <pre id="resultJson">No message submitted yet.</pre>
+    </section>
+
+    <footer>Northstar Retail Co. • Independent Learning &amp; Blocker Prototype</footer>
+  </main>
+  <script>window.NORTHSTAR_API_BASE="REPLACE_WITH_RENDER_API_URL";</script><script src="./app.js"></script>
+</body>
+</html>

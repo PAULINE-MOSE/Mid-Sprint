@@ -1,5 +1,7 @@
 # Northstar Inventory Message Queue Prototype
 
+## Assignment 1 — Independent Learning & Blocker Log
+
 ### Purpose
 
 This mini-prototype demonstrates how a **message queue** can decouple an inventory-update API from the component that processes inventory updates.
@@ -151,4 +153,15 @@ The test suite covers:
 - Maximum-retry dead-letter behavior
 - Invalid message validation
 
+## Assignment 1 deliverables
 
+1. Working mini-prototype — this repository.
+2. Learning & Blocker Journal — `LEARNING_BLOCKER_JOURNAL.md`.
+3. Testing evidence — automated tests under `tests/`.
+4. Technical explanation — this README.
+
+## Interactive prototype
+
+The project includes an interactive browser prototype in `public/`. When the Node.js service is running, open the service URL and use the **Send Inventory Update** form. The browser submits to `POST /api/inventory`, which publishes the message to RabbitMQ for asynchronous processing.
+
+For public deployment, use a Node.js host such as Render for the backend and RabbitMQ. GitHub Pages can host the static `docs/` copy, but it cannot execute the Node.js/RabbitMQ backend. After the backend is deployed, replace `REPLACE_WITH_RENDER_API_URL` in `docs/index.html` with the deployed backend URL and publish `docs/` through GitHub Pages.
