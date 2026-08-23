@@ -1,7 +1,5 @@
 # Learning & Blocker Journal
 
-## Assignment 1 — Independent Learning & Blocker Log
-
 ### Important note
 
 This journal records the development and troubleshooting work represented by the prototype. Entries describing failures are based on issues identified while preparing and validating the supplied project, rather than claiming that a learner experienced an event that did not occur.
