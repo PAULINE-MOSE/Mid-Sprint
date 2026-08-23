@@ -1,7 +1,5 @@
 # Northstar Inventory Message Queue Prototype
 
-## Assignment 1 — Independent Learning & Blocker Log
-
 ### Purpose
 
 This mini-prototype demonstrates how a **message queue** can decouple an inventory-update API from the component that processes inventory updates.
@@ -152,13 +150,6 @@ The test suite covers:
 - Retry behavior
 - Maximum-retry dead-letter behavior
 - Invalid message validation
-
-## Assignment 1 deliverables
-
-1. Working mini-prototype — this repository.
-2. Learning & Blocker Journal — `LEARNING_BLOCKER_JOURNAL.md`.
-3. Testing evidence — automated tests under `tests/`.
-4. Technical explanation — this README.
 
 ## Interactive prototype
 
