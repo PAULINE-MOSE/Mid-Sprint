@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: northstar-inventory
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: AMQP_URL
+        sync: false
+      - key: PORT
+        value: 10000
+      - key: LOG_LEVEL
+        value: info

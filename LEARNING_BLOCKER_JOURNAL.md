@@ -1,12 +1,14 @@
 # Learning & Blocker Journal
 
-Independent Learning & Blocker Log
+## Assignment 1 — Independent Learning & Blocker Log
 
 ### Important note
 
 This journal records the development and troubleshooting work represented by the prototype. Entries describing failures are based on issues identified while preparing and validating the supplied project, rather than claiming that a learner experienced an event that did not occur.
 
 ## Entry 1 — Project structure and module paths
+
+**Problem:** The supplied prototype archive contained filenames such as `src app,js.js`, `src config-rabbitmq.js.js`, and `src inventoryConsumer,js.js`, while the JavaScript imports expected normal paths such as `src/app.js` and `src/config/rabbitmq.js`.
 
 **Investigation:** Compared the required module paths in `require()` statements with the physical files in the archive.
 
